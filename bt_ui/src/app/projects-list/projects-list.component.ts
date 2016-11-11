@@ -9,6 +9,10 @@ import {Project} from "../models/Project";
 })
 export class ProjectsListComponent implements OnInit {
 
+  newProject = false;
+  project : Project = new Project();
+  displayDialog : boolean = false;
+  selectedProject : Project;
   projects : Project[];
 
   constructor(private _projectService : ProjectService) { }
@@ -20,4 +24,27 @@ export class ProjectsListComponent implements OnInit {
       );
   }
 
+  showDialogToAdd() {
+    this.newProject = true;
+    this.project = new Project();
+    this.displayDialog = true;
+  }
+
+  save() {
+    if(this.newProject)
+      this.projects.push(this.project);
+    else
+      this.projects[this.findSelectedCarIndex()] = this.project;
+
+    this.project = null;
+    this.displayDialog = false;
+  }
+
+  findSelectedCarIndex(): number {
+    return this.projects.indexOf(this.selectedProject);
+  }
+
+  delete(){
+
+  }
 }
