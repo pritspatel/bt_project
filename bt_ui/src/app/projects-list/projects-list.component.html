@@ -1,0 +1,10 @@
+<div class="page-header">
+  <h1>Projects</h1>
+  <p-dataTable [value]="projects">
+    <p-column field="id" [sortable]="true" header="ID"></p-column>
+    <p-column field="name" header="Name" [sortable]="true"></p-column>
+    <p-column field="description" header="Description" ></p-column>
+    <p-column field="createdAt" header="Created On" [sortable]="true"></p-column>
+    <p-column field="updatedAt" header="Updated On" [sortable]="true"></p-column>
+  </p-dataTable>
+</div>
