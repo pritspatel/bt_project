@@ -11,6 +11,7 @@ module.exports = {
     firstName : 'string',
     lastName : 'string',
     email : 'string',
+    username : 'string', 
     password : 'string',
     enabled : 'boolean',
     lastLoginDate : 'date'

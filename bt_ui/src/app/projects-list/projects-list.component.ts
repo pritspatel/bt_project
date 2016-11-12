@@ -21,6 +21,7 @@ export class ProjectsListComponent implements OnInit {
    * Lifecycle hook for on init
    */
   ngOnInit() {
+    console.log('Firing on init');
     this._projectService.getProjects()
       .subscribe(
       data => this.projects = data
