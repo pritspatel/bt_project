@@ -1,3 +1,4 @@
+import { GlobalEventsManager } from './shared/global.events.manager';
 import { MockBackend } from '@angular/http/testing';
 import { fakeBackendProvider } from './_helpers/fake-backend';
 import { AuthenticationService } from './services/authentication.service';
@@ -42,7 +43,7 @@ import { PriorityListComponent } from './priority-list/priority-list.component';
     InputTextareaModule,
     routing
   ],
-  providers: [ProjectService,StatusService,SeverityService,PriorityService,AuthenticationService,AuthGuard,fakeBackendProvider,MockBackend,BaseRequestOptions],
+  providers: [ProjectService,StatusService,SeverityService,PriorityService,AuthenticationService,AuthGuard,fakeBackendProvider,MockBackend,BaseRequestOptions,GlobalEventsManager],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

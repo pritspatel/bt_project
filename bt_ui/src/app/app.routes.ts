@@ -11,9 +11,8 @@ import { Routes, RouterModule } from '@angular/router';
 export const routes: Routes = [
     {
         path: '',
-        redirectTo: 'project-list',
-        pathMatch: 'full',
-        canActivate: [AuthGuard]
+        redirectTo: 'login',
+        pathMatch: 'full'
     },
     {
         path: 'login',

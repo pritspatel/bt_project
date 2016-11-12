@@ -1,3 +1,4 @@
+import { GlobalEventsManager } from './../shared/global.events.manager';
 import { AuthenticationService } from './../services/authentication.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -15,7 +16,8 @@ export class LoginComponent implements OnInit {
 
     constructor(
         private router: Router,
-        private authenticationService: AuthenticationService) { }
+        private authenticationService: AuthenticationService,
+        private globalEventsManager: GlobalEventsManager) { }
 
     ngOnInit() {
         // reset login status
@@ -27,7 +29,9 @@ export class LoginComponent implements OnInit {
         this.authenticationService.login(this.model.username, this.model.password)
             .subscribe(result => {
                 if (result === true) {
-                    this.router.navigate(['/']);
+                    this.globalEventsManager.showNavBar.emit(true);
+                    this.router.navigate(['/project-list']);
+                    
                 } else {
                     this.error = 'Username or password is incorrect';
                     this.loading = false;
