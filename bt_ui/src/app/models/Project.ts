@@ -4,10 +4,8 @@
 export class Project{
 
   private id : number;
-  private name : string;
-  private description : string;
   private createdAt : any;
   private updatedAt : any;
 
-  constructor(){}
+  constructor(public name?,public descripion?){}
 }

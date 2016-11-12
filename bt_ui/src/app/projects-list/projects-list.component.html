@@ -1,6 +1,6 @@
 <div class="page-header">
   <h1>Projects</h1>
-  <p-dataTable [value]="projects" [paginator]="true" rows="15" [responsive]="true" [resizableColumns]="true">
+  <p-dataTable [value]="projects" selectionMode="single" [(selection)]="selectedProject" (onRowSelect)="onRowSelect($event)" [paginator]="true" rows="15" [responsive]="true" [resizableColumns]="true">
     <p-column field="id" [sortable]="true" header="ID"></p-column>
     <p-column field="name" header="Name" [sortable]="true"></p-column>
     <p-column field="description" header="Description" ></p-column>
