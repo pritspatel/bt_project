@@ -43,7 +43,7 @@ import { PriorityListComponent } from './priority-list/priority-list.component';
     InputTextareaModule,
     routing
   ],
-  providers: [ProjectService,StatusService,SeverityService,PriorityService,AuthenticationService,AuthGuard,fakeBackendProvider,MockBackend,BaseRequestOptions,GlobalEventsManager],
+  providers: [ProjectService,StatusService,SeverityService,PriorityService,AuthenticationService,AuthGuard,BaseRequestOptions,GlobalEventsManager],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
