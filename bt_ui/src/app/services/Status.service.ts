@@ -9,7 +9,7 @@ import {Status} from "../models/Status.model";
 @Injectable()
 export class StatusService{
 
-  private BASE_URL = 'http://localhost:1337/Status';
+  private BASE_URL = 'http://localhost:1337/status';
 
   constructor(private _http : Http){}
 

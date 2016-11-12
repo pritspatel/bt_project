@@ -1,3 +1,6 @@
+import { PriorityService } from './services/Priority.service';
+import { SeverityService } from './services/Severity.service';
+import { StatusService } from './services/Status.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -32,7 +35,7 @@ import { PriorityListComponent } from './priority-list/priority-list.component';
     InputTextareaModule,
     routing
   ],
-  providers: [ProjectService],
+  providers: [ProjectService,StatusService,SeverityService,PriorityService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -10,7 +10,7 @@ module.exports = {
   attributes: {
     code : 'string',
     name : 'string',
-    rank : 'number'
+    rank : 'string'
   }
 };
 
