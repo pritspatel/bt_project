@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {Http, Response, Headers, RequestOptions} from "@angular/http";
 import {Observable} from "rxjs";
-import {Project} from "../models/Project";
+import {Project} from "../models/Project.model";
 /**
  * Created by 3ppat on 11/11/2016.
  */

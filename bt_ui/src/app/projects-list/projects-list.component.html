@@ -1,9 +1,9 @@
 <div class="page-header">
-  <h1>Projects</h1>
+  <h3>Projects</h3>
   <p-dataTable [value]="projects" selectionMode="single" [(selection)]="selectedProject" (onRowSelect)="onRowSelect($event)" [paginator]="true" rows="15" [responsive]="true" [resizableColumns]="true">
     <p-column field="id" [sortable]="true" header="ID"></p-column>
-    <p-column field="name" header="Name" [sortable]="true"></p-column>
-    <p-column field="description" header="Description" ></p-column>
+    <p-column field="name" header="Name" [sortable]="true" [filter]="true" filterMatchMode="contains"></p-column>
+    <p-column field="description" header="Description" [filter]="true" filterMatchMode="contains"></p-column>
     <p-column field="createdAt" header="Created On" [sortable]="true"></p-column>
     <p-column field="updatedAt" header="Updated On" [sortable]="true"></p-column>
     <footer><div class="ui-helper-clearfix" style="width:100%"><button type="button" pButton icon="fa-plus" style="float:left" (click)="showDialogToAdd()" label="Add"></button></div></footer>

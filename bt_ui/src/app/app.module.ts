@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProjectsListComponent } from './projects-list/projects-list.component';
 import {ProjectService} from "./services/ProjectService";
-import {DataTableModule,SharedModule,ButtonModule,DialogModule} from 'primeng/primeng';
+import {DataTableModule,SharedModule,ButtonModule,DialogModule,InputTextareaModule} from 'primeng/primeng';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,8 @@ import {DataTableModule,SharedModule,ButtonModule,DialogModule} from 'primeng/pr
     DataTableModule,
     SharedModule,
     ButtonModule,
-    DialogModule
+    DialogModule,
+    InputTextareaModule
   ],
   providers: [ProjectService],
   bootstrap: [AppComponent]
