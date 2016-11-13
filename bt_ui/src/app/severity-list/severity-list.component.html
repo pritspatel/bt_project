@@ -1,3 +1,31 @@
-<p>
-  severity-list works!
-</p>
+<div class="page-header">
+  <h3>Severities</h3>
+  <p-dataTable [value]="severityList" selectionMode="single" [(selection)]="selectedProject" (onRowSelect)="onRowSelect($event)" [paginator]="true" rows="15" [responsive]="true" [resizableColumns]="true">
+    <p-column field="id" [sortable]="true" header="ID"></p-column>
+    <p-column field="code" header="Code" [sortable]="true" [filter]="true" filterMatchMode="contains"></p-column>
+    <p-column field="name" header="Name" [filter]="true" filterMatchMode="contains"></p-column>
+    <p-column field="createdAt" header="Created On" [sortable]="true"></p-column>
+    <p-column field="updatedAt" header="Updated On" [sortable]="true"></p-column>
+    <footer><div class="ui-helper-clearfix" style="width:100%"><button type="button" pButton icon="fa-plus" style="float:left" (click)="showDialogToAdd()" label="Add"></button></div></footer>
+  </p-dataTable>
+</div>
+
+
+<p-dialog header="Severity Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true">
+  <div class="ui-grid ui-grid-responsive ui-fluid" *ngIf="severity">
+    <div class="ui-grid-row">
+      <div class="ui-grid-col-4"><label for="code">Severity Code</label></div>
+      <div class="ui-grid-col-8"><input pInputText id="code" [(ngModel)]="severity.code" /></div>
+    </div>
+    <div class="ui-grid-row">
+      <div class="ui-grid-col-4"><label for="name">Description</label></div>
+      <div class="ui-grid-col-8"><input pInputText id="name" [(ngModel)]="severity.name" /></div>
+    </div>
+  </div>
+  <footer>
+    <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+      <button type="button" pButton icon="fa-close" (click)="delete()" label="Delete"></button>
+      <button type="button" pButton icon="fa-check" (click)="save()" label="Save"></button>
+    </div>
+  </footer>
+</p-dialog>
