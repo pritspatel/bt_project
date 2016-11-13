@@ -1,3 +1,31 @@
-<p>
-  priority-list works!
-</p>
+<div class="page-header">
+  <h3>Priorities</h3>
+  <p-dataTable [value]="priorityList" selectionMode="single" [(selection)]="selectedProject" (onRowSelect)="onRowSelect($event)" [paginator]="true" rows="15" [responsive]="true" [resizableColumns]="true">
+    <p-column field="id" [sortable]="true" header="ID"></p-column>
+    <p-column field="code" header="Code" [sortable]="true" [filter]="true" filterMatchMode="contains"></p-column>
+    <p-column field="description" header="Description" [filter]="true" filterMatchMode="contains"></p-column>
+    <p-column field="createdAt" header="Created On" [sortable]="true"></p-column>
+    <p-column field="updatedAt" header="Updated On" [sortable]="true"></p-column>
+    <footer><div class="ui-helper-clearfix" style="width:100%"><button type="button" pButton icon="fa-plus" style="float:left" (click)="showDialogToAdd()" label="Add"></button></div></footer>
+  </p-dataTable>
+</div>
+
+
+<p-dialog header="Project Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true">
+  <div class="ui-grid ui-grid-responsive ui-fluid" *ngIf="priority">
+    <div class="ui-grid-row">
+      <div class="ui-grid-col-4"><label for="code">Priority Code</label></div>
+      <div class="ui-grid-col-8"><input pInputText id="code" [(ngModel)]="priority.code" /></div>
+    </div>
+    <div class="ui-grid-row">
+      <div class="ui-grid-col-4"><label for="description">Description</label></div>
+      <div class="ui-grid-col-8"><input pInputText id="description" [(ngModel)]="priority.description" /></div>
+    </div>
+  </div>
+  <footer>
+    <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+      <button type="button" pButton icon="fa-close" (click)="delete()" label="Delete"></button>
+      <button type="button" pButton icon="fa-check" (click)="save()" label="Save"></button>
+    </div>
+  </footer>
+</p-dialog>

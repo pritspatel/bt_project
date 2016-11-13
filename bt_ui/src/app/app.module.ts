@@ -1,6 +1,5 @@
 import { GlobalEventsManager } from './shared/global.events.manager';
 import { MockBackend } from '@angular/http/testing';
-import { fakeBackendProvider } from './_helpers/fake-backend';
 import { AuthenticationService } from './services/authentication.service';
 import { AuthGuard } from './guards/auth.guard';
 import { LoginComponent } from './login/login.component';
